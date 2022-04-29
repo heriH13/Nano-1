@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PlaygroundVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PlaygroundSB" id="Y6W-OH-hqX" customClass="PlaygroundVC" customModule="Nano1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRN-Ns-DF5">
+                                <rect key="frame" x="20" y="211" width="374" height="576"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="576" id="UPb-S1-MxL"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="106" translatesAutoresizingMaskIntoConstraints="NO" id="sWd-7e-OBZ">
+                                <rect key="frame" x="21" y="109" width="372" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObZ-w2-VD3">
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Shoes"/>
+                                        <connections>
+                                            <segue destination="efM-12-6B8" kind="presentation" identifier="shoesSegue" id="bkh-mZ-ATW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fhe-6A-Mmc">
+                                        <rect key="frame" x="239" y="0.0" width="133" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="Slippers"/>
+                                        <connections>
+                                            <segue destination="kIJ-Ul-LAS" kind="presentation" identifier="slippersSegue" id="zaD-ea-3rg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gwh-lw-OL4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fhe-6A-Mmc" secondAttribute="trailing" id="UVM-81-bFv"/>
+                                    <constraint firstItem="ObZ-w2-VD3" firstAttribute="leading" secondItem="sWd-7e-OBZ" secondAttribute="leading" id="ymB-u3-edS"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sWd-7e-OBZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="65" id="2aM-0w-nnd"/>
+                            <constraint firstItem="sWd-7e-OBZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="2bS-t5-lBe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="DRN-Ns-DF5" secondAttribute="bottom" constant="75" id="Sdf-r5-LV8"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sWd-7e-OBZ" secondAttribute="trailing" constant="21" id="cZ5-j8-cMy"/>
+                            <constraint firstItem="DRN-Ns-DF5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="uQc-Sc-4Q9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DRN-Ns-DF5" secondAttribute="trailing" constant="20" id="xMd-42-y7z"/>
+                            <constraint firstItem="DRN-Ns-DF5" firstAttribute="top" secondItem="sWd-7e-OBZ" secondAttribute="bottom" constant="62" id="yTZ-lR-Waz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chooseShoes" destination="ObZ-w2-VD3" id="OWD-GR-zfy"/>
+                        <outlet property="chooseSlippers" destination="Fhe-6A-Mmc" id="5zw-xj-m2e"/>
+                        <outlet property="container" destination="DRN-Ns-DF5" id="6T9-zz-mwB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="61"/>
+        </scene>
+        <!--Shoes-->
+        <scene sceneID="v3R-Lu-5GP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Shoes" id="efM-12-6B8" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ocR-h9-26k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607" y="-161"/>
+        </scene>
+        <!--Slippers-->
+        <scene sceneID="Wc1-S0-9zG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Slippers" id="kIJ-Ul-LAS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKG-hL-j9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="726" y="-75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
